@@ -1,7 +1,6 @@
 ﻿using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Desktop;
-using System.Diagnostics;
 using VoxelGL;
 
 namespace Voxel
@@ -195,16 +194,6 @@ namespace Voxel
                 renderer.AddTriangleToMesh(v6, v5, v2);
                 renderer.AddTriangleToMesh(v6, v2, v1);
             }
-        }
-
-        public void RenderAll(GameWindow window)
-        {
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            foreach (MeshRenderer renderer in meshRenderers)
-            {
-                renderer.Render();
-            }
-            window.SwapBuffers();
         }
 
         public void Render(int meshId)
